@@ -22,7 +22,7 @@ public class Customer {
 	}
 
 	static {
-		lastId = 400000;
+		lastId = 100000;
 	}
 
 	public static String nextId() {

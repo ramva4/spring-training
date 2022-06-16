@@ -21,24 +21,24 @@ import trial.ram.bank.repository.CustomerFeignClient;
 public class AccountController {
 	@Autowired
 	AccountRepository accountRepository;
-	
+
 	@Autowired
 	CustomerFeignClient customers;
-	
+
 	@GetMapping
 	Collection<Account> getAccounts() {
 		return accountRepository.getAllAccounts();
 	}
-	
+
 	@GetMapping("/{accountId}")
 	Account getAccount(@PathVariable("accountId") String accountId) {
-		System.out.println("getAccount()");
 		Account account = accountRepository.getAccount(accountId);
-		System.out.println("customerId: " + account.getCustomerId());
-		System.out.println(customers.getCustomer(account.getCustomerId()));
+		if (account != null) {
+			account.setCustomer(customers.getCustomer(account.getCustomerId()));
+		}
 		return account;
 	}
-	
+
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
 	Account putAccount(@RequestBody Account inAccount) {
