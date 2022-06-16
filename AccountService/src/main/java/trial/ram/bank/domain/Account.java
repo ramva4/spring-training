@@ -7,7 +7,7 @@ public class Account {
 	}
 
 	public static String nextId() {
-		return String.format("A%f", lastId++);
+		return String.format("A%d", lastId++);
 	}
 
 	String accountId;
