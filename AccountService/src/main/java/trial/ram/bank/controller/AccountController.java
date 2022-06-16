@@ -14,12 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 import trial.ram.bank.domain.Account;
 import trial.ram.bank.repository.AccountRepository;
+import trial.ram.bank.repository.CustomerFeignClient;
 
 @RestController
 @RequestMapping("/accounts")
 public class AccountController {
 	@Autowired
 	AccountRepository accountRepository;
+	
+	@Autowired
+	CustomerFeignClient customers;
 	
 	@GetMapping
 	Collection<Account> getAccounts() {
@@ -28,7 +32,9 @@ public class AccountController {
 	
 	@GetMapping("/{accountId}")
 	Account getAccount(@PathVariable("accountId") String accountId) {
-		return accountRepository.getAccount(accountId);
+		Account account = accountRepository.getAccount(accountId);
+		System.out.println(customers.getCustomer(account.getCustomerId()));
+		return account;
 	}
 	
 	@PostMapping

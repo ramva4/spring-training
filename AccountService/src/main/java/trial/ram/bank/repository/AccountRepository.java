@@ -3,6 +3,7 @@ package trial.ram.bank.repository;
 import java.util.Collection;
 import java.util.HashMap;
 
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 
 import trial.ram.bank.domain.Account;
@@ -19,6 +20,7 @@ public class AccountRepository {
 		account.setAccountId(Account.nextId());
 		return accounts.put(account.getAccountId(), account);
 	}
+	
 	
 	public Account getAccount(String accountId) {
 		return accounts.get(accountId);
