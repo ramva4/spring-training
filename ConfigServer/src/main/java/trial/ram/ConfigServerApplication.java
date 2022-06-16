@@ -1,4 +1,4 @@
-package trial.ram.bank;
+package trial.ram;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
