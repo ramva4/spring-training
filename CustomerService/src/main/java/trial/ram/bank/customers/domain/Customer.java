@@ -30,6 +30,5 @@ public class Customer {
 	}
 
 	public Customer() {
-		customerId = String.valueOf(Customer.nextId());
 	}
 }

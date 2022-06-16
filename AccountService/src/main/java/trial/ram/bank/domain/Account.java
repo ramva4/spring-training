@@ -4,7 +4,16 @@ public class Account {
 	static int lastId;
 	String accountId;
 	String customerId;
+	Customer customer;
 	
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
 	public String getAccountId() {
 		return accountId;
 	}
@@ -22,14 +31,10 @@ public class Account {
 	}
 
 	static {
-		lastId = 400000;
+		lastId = 100000;
 	}
 
 	public static String nextId() {
 		return String.valueOf(lastId++);
-	}
-
-	public Account() {
-		accountId = String.valueOf(Account.nextId());
 	}
 }

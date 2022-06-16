@@ -32,7 +32,9 @@ public class AccountController {
 	
 	@GetMapping("/{accountId}")
 	Account getAccount(@PathVariable("accountId") String accountId) {
+		System.out.println("getAccount()");
 		Account account = accountRepository.getAccount(accountId);
+		System.out.println("customerId: " + account.getCustomerId());
 		System.out.println(customers.getCustomer(account.getCustomerId()));
 		return account;
 	}

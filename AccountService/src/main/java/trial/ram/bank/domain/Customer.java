@@ -1,8 +1,9 @@
 package trial.ram.bank.domain;
 
 public class Customer {
-	static int lastId;
 	String customerName;
+	String customerId;
+
 	public String getCustomerName() {
 		return customerName;
 	}
@@ -11,8 +12,6 @@ public class Customer {
 		this.customerName = customerName;
 	}
 
-	String customerId;
-	
 	public String getCustomerId() {
 		return customerId;
 	}
@@ -21,15 +20,6 @@ public class Customer {
 		this.customerId = customerId;
 	}
 
-	static {
-		lastId = 400000;
-	}
-
-	public static String nextId() {
-		return String.valueOf(lastId++);
-	}
-
 	public Customer() {
-		customerId = String.valueOf(Customer.nextId());
 	}
 }
