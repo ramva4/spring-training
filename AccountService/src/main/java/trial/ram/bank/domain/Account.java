@@ -8,6 +8,8 @@ public class Account {
 
 	static {
 		accounts = new HashMap<>();
+		Account myAccount = new Account();
+		myAccount.setCustName("This Bank");
 	}
 	
 	static int nextId() {
