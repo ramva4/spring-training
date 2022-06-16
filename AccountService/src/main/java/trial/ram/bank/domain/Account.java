@@ -3,11 +3,11 @@ package trial.ram.bank.domain;
 public class Account {
 	static int lastId;
 	static {
-		lastId = 200000;
+		lastId = 2000;
 	}
 
 	public static String nextId() {
-		return String.valueOf(lastId++);
+		return String.format("A%f", lastId++);
 	}
 
 	String accountId;

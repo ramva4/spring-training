@@ -22,11 +22,11 @@ public class Customer {
 	}
 
 	static {
-		lastId = 100000;
+		lastId = 100;
 	}
 
 	public static String nextId() {
-		return String.valueOf(lastId++);
+		return String.format("C%d", lastId++);
 	}
 
 	public Customer() {
