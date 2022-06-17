@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import trial.ram.bank.domain.Customer;
 
-@FeignClient(name = "customerFeignClient", url = "http://localhost:8091/customers")
+@FeignClient(name = "customerFeignClient", url = "http://CUSTOMERS/customers")
 public interface CustomerFeignClient {
 	//@RequestMapping("/", method = RequestMethod.GET)
 	@GetMapping("/{customerId}")
