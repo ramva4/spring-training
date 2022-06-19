@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import trial.ram.bank.domain.Customer;
 
-@FeignClient(name = "customerFeignClient", url = "http://CUSTOMERS/customers")
+@FeignClient(name = "customers")
+//, url = "http://CUSTOMERS/customers")
 public interface CustomerFeignClient {
 	//@RequestMapping("/", method = RequestMethod.GET)
-	@GetMapping("/{customerId}")
+	@GetMapping("/customers/{customerId}")
     Customer getCustomer(@PathVariable String customerId);	
 }
